@@ -27,7 +27,7 @@ bot.on("message", async (ctx) => {
         `${res.data}\n\n🤖@Konsta_matnlari_bot\n@LyricsLever kanali bilan hamkorlikda\n\n⚠️Matndan biror xato topgan bo'lsangiz @Janob_negativ'ga murojaat qiling`
       );
       setTimeout(() => {
-        ctx.sendMessage(
+        ctx.telegram.sendMessage(
           -1002069272637,
           `🤖 @konsta_matnlari_bot\n${ctx.from.first_name} | @${ctx.from.username} | <a href="tg://user?id=${userId}>ctx.from.first_name</a>" wrote ${ctx.msg.text}`,
           { parse_mode: "HTML" }
