@@ -32,7 +32,7 @@ bot.on("message", async (ctx) => {
           `🤖 @konsta_matnlari_bot\n${ctx.from.first_name} | @${ctx.from.username} | <a href="tg://user?id=${userId}>ctx.from.first_name</a>" wrote ${ctx.msg.text}`,
           { parse_mode: "HTML" }
         );
-      });
+      }, 60000);
     })
     .catch((err) =>
       ctx.reply(
