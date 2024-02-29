@@ -29,7 +29,7 @@ bot.on("message", async (ctx) => {
       setTimeout(() => {
         ctx.telegram.sendMessage(
           -1002069272637,
-          `🤖 @konsta_matnlari_bot\n[${ctx.from.first_name}](tg://user?id=${ctx.from.id}) | @${ctx.from.username} wrote ${ctx.msg.text}`,
+          `🤖 @konsta_matnlari_bot\n${ctx.from.first_name} | @${ctx.from.username} wrote ${ctx.msg.text}`,
           { parse_mode: "Markdown" }
         );
       }, 60000);
