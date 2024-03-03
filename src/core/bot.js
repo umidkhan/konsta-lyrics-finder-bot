@@ -29,8 +29,8 @@ bot.on("message", async (ctx) => {
       setTimeout(() => {
         ctx.telegram.sendMessage(
           -1002069272637,
-          `🤖 @konsta_matnlari_bot\n${ctx.from.first_name} | @${ctx.from.username} wrote ${ctx.msg.text}`,
-          { parse_mode: "Markdown" }
+          `🤖 @konsta_matnlari_bot\n<a href="tg://user?id=${ctx.from.id}">${ctx.from.first_name}</a> | @${ctx.from.username} wrote ${ctx.msg.text}`,
+          { parse_mode: "HTML" }
         );
       }, 60000);
     })
