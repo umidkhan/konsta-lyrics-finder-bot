@@ -19,7 +19,6 @@ bot.help((ctx) =>
 bot.on("message", async (ctx) => {
   ctx.react("👌");
   const text = ctx.msg.text;
-  const userId = ctx.from.id;
   axios
     .get("https://konsta-lyrics-api.onrender.com/lyrics/" + text)
     .then(async (res) => {
@@ -29,7 +28,13 @@ bot.on("message", async (ctx) => {
       setTimeout(() => {
         ctx.telegram.sendMessage(
           -1002069272637,
-          `🤖 @konsta_matnlari_bot\n<a href="tg://user?id=${ctx.from.id}">${ctx.from.first_name}</a> | @${ctx.from.username} wrote ${ctx.msg.text}`,
+          `<b>🤖 @Konsta_matnlari_bot</b>\n👤Name: <a href="tg://user?id=${
+            ctx.from.id
+          }">${ctx.from.first_name}</a>\n🔰Username: @${
+            ctx.from.username == undefined ? "Not found" : ctx.from.username
+          }\n🆔Chat ID: <code>${ctx.chat.id}</code>\n🔢User ID: <code>${
+            ctx.from.id
+          }</code>\n✍️Wrote: ${ctx.msg.text}`,
           { parse_mode: "HTML" }
         );
       }, 60000);
